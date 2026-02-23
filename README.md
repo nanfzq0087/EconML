@@ -23,7 +23,7 @@ Each part has its own README.
 ## About the main.py (Coming soon)
 
 ```bash
-python3 main.py
+python3 main.py --dataset --task --evaluation method
 ```
 
 A unified main.py orchestrates the entire workflow, connecting the data pipeline, model pipeline, and evaluation module.
