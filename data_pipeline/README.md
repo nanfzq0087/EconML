@@ -5,7 +5,7 @@ This parts covers the entire pipeline from data acquisition to pre-training, pro
 ```bash
 python3 download_data.py --ticker ^GSPC --period max --interval 1d
 ```
---ticker
+#### ticker
 
 Specifies the financial instrument to download.
 
@@ -18,8 +18,7 @@ SPY — S&P 500 ETF
 AAPL — Apple Inc. stock
 
 
-
---interval
+#### interval
 Defines the time frequency of the downloaded data.
 
 1d — Daily data, Maximum available history
