@@ -9,3 +9,12 @@ How can what we study in academia be translated vertically into real industrial 
 In recent years, the field of time-series forecasting seems to have entered a peculiar loop. Many researchers are overwhelmingly focused on reducing loss values. If a model achieves slightly lower error than previous methods, it is declared state-of-the-art. To achieve this, increasingly complex attention mechanisms are designed, computational costs are escalated, and sometimes questionable model architectures or experimental settings are justified solely because they reduce loss.
 
 But does this truly matter?
+
+## This project includes three parts:
+
+1. data_pipeline
+2. model_pipeline
+3. evaluation
+
+Each part has its own README.
+
