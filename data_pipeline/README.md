@@ -37,4 +37,4 @@ Defines the time frequency of the downloaded data.
 
 The downloaded data will be saved under `raw_data/`, and all variables will be visualized and stored in `raw_figures/`. 
 
-![SPX Plot](raw_figures/GSPC_max_1d/all_variables.png)
+![SPX Plot](raw_data/raw_figures/GSPC_max_1d/all_variables.png)
