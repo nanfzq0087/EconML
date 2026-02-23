@@ -48,7 +48,6 @@ python3 data_analysis.py --input raw_data/GSPC_max_1d.csv --out_dir analysis/GSP
 ```
 
 #### Descriptive Statistics (GSPC_1d)
-
 | Variable    | Count  | Mean      | Std       | Min  | 1%   | 5%   | 50%    | 95%     | 99%     | Max     | Skew  | Kurtosis |
 |------------|--------|----------|----------|------|------|------|--------|----------|----------|----------|--------|----------|
 | Adj_Close  | 24651  | 723.39   | 1236.89  | 4.40 | 7.70 | 10.07| 103.53 | 3807.70 | 5925.29 | 6978.60 | 2.53   | 6.73     |
