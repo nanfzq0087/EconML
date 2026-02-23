@@ -20,3 +20,7 @@ This project includes three parts:
 
 Each part has its own README.
 
+## About the main.py (Coming soon)
+
+A unified main.py orchestrates the entire workflow, connecting the data pipeline, model pipeline, and evaluation module.
+Users can flexibly choose the dataset (e.g., SPX or N225), the model, and the task type (prediction or anomaly detection), with automated evaluation performed at the end of the process.
