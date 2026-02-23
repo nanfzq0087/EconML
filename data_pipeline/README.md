@@ -56,5 +56,6 @@ python3 data_analysis.py --input raw_data/GSPC_max_1d.csv --out_dir analysis/GSP
 | Open       | 24651  | 723.25   | 1236.69  | 4.40 | 7.70 | 10.07| 103.54 | 3810.70 | 5920.21 | 7002.00 | 2.53   | 6.73     |
 | Volume     | 24651  | 9.68e8   | 1.68e9   | 0.00 | 0.00 | 0.00 | 2.21e7 | 4.57e9  | 6.28e9  | 1.15e10 | 1.75   | 2.18     |
 <p align="center">
+  
 **Table 1.** Descriptive Statistics (GSPC_1d)
 </p>
