@@ -14,7 +14,7 @@ But does this truly matter?
 
 This project includes three parts:
 
-1. data_pipeline
+1. [data_pipeline](data_pipeline/README.md)
 2. model_pipeline
 3. evaluation
 
