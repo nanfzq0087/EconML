@@ -46,6 +46,7 @@ The downloaded data will be saved under `raw_data/`, and all variables will be v
 ```bash
 python3 data_analysis.py --input raw_data/GSPC_max_1d.csv --out_dir analysis/GSPC_1d
 ```
+The analysis results will be saved at analysis/GSPC_1d. 
 
 | Variable    | Count  | Mean      | Std       | Min  | 1%   | 5%   | 50%    | 95%     | 99%     | Max     | Skew  | Kurtosis |
 |------------|--------|----------|----------|------|------|------|--------|----------|----------|----------|--------|----------|
