@@ -45,6 +45,8 @@ The downloaded data will be saved under `raw_data/`, and all variables will be v
 ### Analysis the data
 ```bash
 python3 data_analysis.py --input raw_data/GSPC_max_1d.csv --out_dir analysis/GSPC_1d
+```
+```bash
 Range: 1927-12-30 -> 2026-02-20 | Rows: 24651 | Freq guess: daily_or_less
 Columns (6): ['Adj_Close', 'Close', 'High', 'Low', 'Open', 'Volume']
 
