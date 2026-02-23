@@ -10,7 +10,9 @@ In recent years, the field of time-series forecasting seems to have entered a pe
 
 But does this truly matter?
 
-## This project includes three parts:
+## Industrial Financial Time-Series Forecasting Projects
+
+This project includes three parts:
 
 1. data_pipeline
 2. model_pipeline
