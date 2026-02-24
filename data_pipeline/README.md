@@ -1,7 +1,7 @@
 ## data_pipline
-This parts covers the entire pipeline from data acquisition to pre-training, providing detailed analysis and visualization for each step. The example will use SPX stock price.
+This parts covers the entire pipeline from data acquisition to pre-training, providing detailed analysis and visualization for each step. This is an example of SPX stock price data.
 
-### Download the data
+### 📈Download the data
 ```bash
 python3 download_data.py --ticker ^GSPC --period max --interval 1d
 ```
@@ -42,11 +42,8 @@ The downloaded data will be saved under `raw_data/`, and all variables will be v
 **Figure 1.** Daily OHLCV variables of the S&P 500 Index. The Close/High/Low/Open prices appear very similar while the volume exhibits different.
 
 
-### Analysis the data
-```bash
-python3 data_analysis.py --input raw_data/GSPC_max_1d.csv --out_dir analysis/GSPC_1d
-```
-The analysis results will be saved at analysis/GSPC_1d. 
+### 📈Observe the data
+We can calculate the basic status of the raw data:
 
 | Variable    | Count  | Mean      | Std       | Min  | 1%   | 5%   | 50%    | 95%     | 99%     | Max     | Skew  | Kurtosis |
 |------------|--------|----------|----------|------|------|------|--------|----------|----------|----------|--------|----------|
@@ -58,4 +55,18 @@ The analysis results will be saved at analysis/GSPC_1d.
 | Volume     | 24651  | 9.68e8   | 1.68e9   | 0.00 | 0.00 | 0.00 | 2.21e7 | 4.57e9  | 6.28e9  | 1.15e10 | 1.75   | 2.18     |
 <p align="center">
   <b>Table 1.</b> Descriptive Statistics (GSPC_1d)
-</p>>
+</p>
+
+Based on our observations, we can draw several key conclusions:
+1.  As shown in Figure 1, the price metrics (Close, High, Low, and Open) appear nearly identical. Furthermore, the data prior to 1960 is excessively flat. Consequently, we may want to truncate the dataset to start from 1960 and focus on Close and Volume as our primary effective data points.
+2.  Both the Kurtosis/Skewness statistics in Table 1 and the line chart in Figure 1 indicate that the SPX stock data exhibits a sharp, rightward upward trend, with a distribution spanning a price range of over 6,000. Therefore, when analyzing volatility factors or performing anomaly detection, it may be necessary to isolate the Trend component.
+3.  By calculating the difference between the Close and Open features, we can derive a supplementary feature representing daily price fluctuations.
+
+#### Data cleaning
+```bash
+python3 data_cleaning.py --input raw_data/GSPC_max_1d.csv --out_dir clean_data/GSPC_1d
+```
+Following our initial observations, we have truncated the dataset to include only Close and Volume data from 1960 onwards. Additionally, we calculated the daily difference between Open and Close prices to serve as a supplementary feature for volatility analysis.
+
+Beyond basic truncation, we implemented standard Data Cleansing procedures. A primary example is our approach to extreme drift detection: we calculate the daily price drift and highlight the top 5% of dates with the highest drift in red. 
+> **Note:** While this serves as a preliminary form of Anomaly Detection, we aim to handle these outliers more rigorously using various Machine Learning techniques during the model_pipeline stage.
