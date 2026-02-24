@@ -1,11 +1,11 @@
-## data_pipline
+## 🚀data_pipline
 This parts covers the entire pipeline from data acquisition to pre-training, providing detailed analysis and visualization for each step. This is an example of SPX stock price data.
 
-### 📈Download the data
+### 📈📈📈📈📈Download the data
 ```bash
 python3 download_data.py --ticker ^GSPC --period max --interval 1d
 ```
-#### ticker
+#### 🛠️**ticker**
 
 Specifies the financial instrument to download.
 
@@ -18,7 +18,7 @@ SPY — S&P 500 ETF
 AAPL — Apple Inc. stock
 
 
-#### interval
+#### 🛠️**interval**
 Defines the time frequency of the downloaded data.
 
 1d — Daily data, Maximum available history
@@ -42,7 +42,7 @@ The downloaded data will be saved under `raw_data/`, and all variables will be v
 **Figure 1.** Daily OHLCV variables of the S&P 500 Index. The Close/High/Low/Open prices appear very similar while the volume exhibits different.
 
 
-### 📈Observe the data
+### 📈📈📈📈📈Observe the data
 We can calculate the basic status of the raw data:
 
 | Variable    | Count  | Mean      | Std       | Min  | 1%   | 5%   | 50%    | 95%     | 99%     | Max     | Skew  | Kurtosis |
@@ -62,7 +62,7 @@ Based on our observations, we can draw several key conclusions:
 2.  Both the Kurtosis/Skewness statistics in Table 1 and the line chart in Figure 1 indicate that the SPX stock data exhibits a sharp, rightward upward trend, with a distribution spanning a price range of over 6,000. Therefore, when analyzing volatility factors or performing anomaly detection, it may be necessary to isolate the Trend component.
 3.  By calculating the difference between the Close and Open features, we can derive a supplementary feature representing daily price fluctuations.
 
-#### Data cleaning
+### 📈📈📈📈📈 Data cleaning
 ```bash
 python3 data_cleaning.py --input raw_data/GSPC_max_1d.csv --out_dir clean_data/GSPC_1d
 ```
@@ -70,3 +70,18 @@ Following our initial observations, we have truncated the dataset to include onl
 
 Beyond basic truncation, we implemented standard Data Cleansing procedures. A primary example is our approach to extreme drift detection: we calculate the daily price drift and highlight the top 5% of dates with the highest drift in red. 
 > **Note:** While this serves as a preliminary form of Anomaly Detection, we aim to handle these outliers more rigorously using various Machine Learning techniques during the model_pipeline stage.
+
+<p align="center">
+ <img src="clean_data/GSPC_1d/spx_analysis_plot.png" width="70%">
+</p>
+
+**Figure 2.** Visualization of Cleaned Dataset. From top to bottom: Close Price, Trading Volume, Price Fluctuation (Open-Close difference), and Daily Drift (Returns). In the uppermost Price plot, the points highlighted in red represent the top 1% of extreme drift events.
+
+At this point, the cleaned dataset and the corresponding plots have been saved to: 
+```bash
+clean_data/GSPC_1d
+```
+### 📈📈📈📈📈Data Analysis
+I will demonstrate several example methods for analyzing financial time-series data.
+
+#### 🛠️ **Part I: Decompose is very useful!**
