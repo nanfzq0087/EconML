@@ -95,3 +95,17 @@ I will demonstrate several example methods for analyzing financial time-series d
 
 We employ the STL (Seasonal and Trend decomposition using Loess) method to decompose the time-series data.
 Alternative approaches such as Empirical Mode Decomposition (EMD) could also be applied; however, these methods require additional frequency-domain interpretation to determine whether each decomposed component should be categorized as trend or noise. Since our dataset consists of daily observations, the seasonal period is set to 252, corresponding to the approximate number of trading days in one year. 
+
+<p align="center">
+ <img src="decompose_data/stl_spx.png" width="70%">
+</p>
+
+**Figure 3.** Visualization of Cleaned Dataset. From top to bottom: Original data, Trend, Seasonal, Residual, Detrended. 
+
+The trend component represents the long-term smoothed trajectory of the time series and can be interpreted as a low-frequency approximation obtained through smoothing.
+
+The seasonal component captures recurring cyclical patterns in the data. As illustrated in the figure, periodic fluctuations are clearly observable, reflecting systematic temporal dynamics within the series.
+
+The residual component corresponds to the irregular or noise-like fluctuations that are not explained by either the trend or seasonal structure. Notably, this component often constitutes one of the primary factors affecting forecasting accuracy, as it contains abrupt shocks and unpredictable variations.
+
+By annotating the three largest residual values (in absolute magnitude), we identify March 20, 23, and 24, 2020 as the most extreme observations. A review of contemporaneous news and macroeconomic events indicates that these dates coincide with the nationwide lockdown measures in the United States during the COVID-19 outbreak, as well as the “Quadruple Witching Day” (a simultaneous expiration of stock index futures, stock index options, stock options, and single-stock futures).
