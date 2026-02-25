@@ -18,7 +18,7 @@ This project includes three parts:
 2. model_pipeline
 3. evaluation
 
-Each part has its own README.
+Each part has its own README and now the data_pipeline is continue updating...
 
 ## About the main.py (Coming soon)
 
