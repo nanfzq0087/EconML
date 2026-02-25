@@ -85,3 +85,13 @@ clean_data/GSPC_1d
 I will demonstrate several example methods for analyzing financial time-series data.
 
 #### 🛠️ **Part I: Decompose is very useful!**
+```bash
+ % python3 data_analysis_decompose.py \
+    --csv clean_data/GSPC_1d/GSPC_cleaned.csv \
+    --out_img decompose_data/stl_spx.png \
+    --out_csv decompose_data/stl_spx.csv \
+    --period 252 \
+```
+
+We employ the STL (Seasonal and Trend decomposition using Loess) method to decompose the time-series data.
+Alternative approaches such as Empirical Mode Decomposition (EMD) could also be applied; however, these methods require additional frequency-domain interpretation to determine whether each decomposed component should be categorized as trend or noise. Since our dataset consists of daily observations, the seasonal period is set to 252, corresponding to the approximate number of trading days in one year. 
